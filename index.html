@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт Квартир Под Ключ | ProRemont</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключим шрифт Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__content">
+            <a href="#" class="logo" onclick="scrollToTop()">ProRemont</a>
+            <nav class="nav">
+                <a href="#services">Услуги</a>
+                <a href="#portfolio">Портфолио</a>
+                <a href="#calculator">Калькулятор</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <a href="tel:+79990000000" class="phone">+7 (999) 000-00-00</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero__content">
+            <h1>Ремонт квартир под ключ<br>в Москве за 30 дней</h1>
+            <p>Дизайн-проект в подарок. Гарантия 3 года. Фиксированная смета.</p>
+            <button class="btn btn-primary" onclick="scrollToCalc()">Рассчитать стоимость</button>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features" id="services">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>Быстро</h3>
+                    <p>Средний срок ремонта — 30 дней</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💰</div>
+                    <h3>Честная цена</h3>
+                    <p>Смета не меняется в процессе</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛡️</div>
+                    <h3>Гарантия</h3>
+                    <p>3 года на все виды работ</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎨</div>
+                    <h3>Дизайн</h3>
+                    <p>Бесплатный дизайн-проект</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Калькулятор (Интерактив!) -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <h2>Рассчитайте стоимость ремонта</h2>
+            <div class="calc-box">
+                <label>Площадь квартиры (м²):</label>
+                <input type="number" id="area" placeholder="Например, 50" min="10">
+                
+                <label>Тип ремонта:</label>
+                <select id="type">
+                    <option value="5000">Косметический (5000 руб/м²)</option>
+                    <option value="12000">Капитальный (12000 руб/м²)</option>
+                    <option value="20000">Дизайнерский (20000 руб/м²)</option>
+                </select>
+
+                <div class="result">
+                    Примерная стоимость: <span id="total">0</span> руб.
+                </div>
+                <button class="btn btn-secondary" onclick="calculate()">Пересчитать</button>
+            </div>
+        </div>
+    </section>
+    <!-- Портфолио -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Наши последние работы</h2>
+            <div class="portfolio__grid">
+                <!-- Работа 1 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ремонт гостиной">
+                    <div class="portfolio-info">
+                        <h3>Квартира-студия, 45 м²</h3>
+                        <p>Срок: 25 дней | Бюджет: 450 000 руб.</p>
+                    </div>
+                </div>
+                <!-- Работа 2 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ремонт кухни">
+                    <div class="portfolio-info">
+                        <h3>Двухкомнатная квартира</h3>
+                        <p>Срок: 40 дней | Бюджет: 800 000 руб.</p>
+                    </div>
+                </div>
+                <!-- Работа 3 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Дизайнерский ремонт">
+                    <div class="portfolio-info">
+                        <h3>Загородный дом</h3>
+                        <p>Срок: 3 месяца | Бюджет: 2.5 млн руб.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заявки -->
+    <section class="contact-form" id="contacts">
+        <div class="container">
+            <h2>Оставьте заявку на бесплатный замер</h2>
+            <form class="form-box" onsubmit="submitForm(event)">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Ваш телефон" required>
+                <textarea placeholder="Комментарий (необязательно)" rows="4"></textarea>
+                <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <p>© 2026 ProRemont. Все права защищены.</p>
+            <p>Телефон: +7 (999) 000-00-00</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
