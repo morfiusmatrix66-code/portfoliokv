@@ -1,279 +1,133 @@
-/* Сброс стилей */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* DCreator Palette for Renovation Project */
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --primary: #38bdf8;
+    --primary-hover: #0ea5e9;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body { 
+    background: var(--bg-dark); 
+    color: var(--text-main); 
     line-height: 1.6;
-    color: #333;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
 /* Header */
-.header {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+.header { 
+    background: rgba(15, 23, 42, 0.95); 
+    backdrop-filter: blur(10px);
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    border-bottom: 1px solid var(--border);
 }
 
-.header__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-}
+.header__content { display: flex; justify-content: space-between; align-items: center; height: 70px; }
 
-.logo {
-    font-weight: 700;
-    font-size: 24px;
-    color: #2563eb;
-}
+.logo { font-weight: 800; font-size: 24px; color: var(--text-main); text-decoration: none; letter-spacing: -0.5px; }
+.logo:hover { color: var(--primary); transition: 0.3s; }
 
-.nav a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: 600;
-    transition: color 0.3s;
-}
+.nav a { text-decoration: none; color: var(--text-muted); margin: 0 15px; font-weight: 500; transition: color 0.3s; }
+.nav a:hover { color: var(--primary); }
 
-.nav a:hover {
-    color: #2563eb;
-}
-
-.phone {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-}
+.phone { text-decoration: none; color: var(--primary); font-weight: 600; }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://всеостройке.рф/wp-content/uploads/2024/11/otkryvajushhee-87.webp');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-    margin-top: 70px; /* Отступ под фиксированный хедер */
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover; background-position: center;
+    height: 100vh; display: flex; align-items: center; text-align: center;
+    margin-top: 70px;
 }
 
-.hero__content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
+.hero__content h1 { font-size: 56px; margin-bottom: 20px; line-height: 1.1; }
+.hero__content p { font-size: 20px; color: var(--text-muted); margin-bottom: 30px; }
 
-.hero__content p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
+/* Buttons */
+.btn { padding: 16px 32px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; transition: all 0.3s; font-weight: 600; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); }
 
-/* Кнопки */
-.btn {
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
+.btn-primary { background: var(--primary); color: var(--bg-dark); }
+.btn-primary:hover { background: var(--primary-hover); }
 
-.btn:hover {
-    transform: scale(1.05);
-}
-
-.btn-primary {
-    background: #2563eb;
-    color: white;
-}
-
-.btn-secondary {
-    background: #10b981;
-    color: white;
-    margin-top: 20px;
-}
+.btn-secondary { background: transparent; border: 2px solid var(--primary); color: var(--primary); margin-top: 20px; }
+.btn-secondary:hover { background: var(--primary); color: var(--bg-dark); }
 
 /* Features */
-.features {
-    padding: 80px 0;
-    background: #f9fafb;
+.features { padding: 100px 0; }
+.features h2, .calculator h2, .portfolio h2, .contact-form h2 { 
+    text-align: center; font-size: 40px; margin-bottom: 60px; 
+    background: linear-gradient(to right, var(--text-main), var(--primary));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
-.features h2, .calculator h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-}
+.features__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 
-.features__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.feature-card { 
+    background: var(--bg-card); padding: 40px 30px; border-radius: 16px; 
+    text-align: center; border: 1px solid var(--border); transition: 0.3s; 
 }
+.feature-card:hover { border-color: var(--primary); transform: translateY(-5px); }
 
-.feature-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
+.icon { font-size: 48px; margin-bottom: 20px; }
+.feature-card h3 { margin-bottom: 10px; font-size: 20px; }
+.feature-card p { color: var(--text-muted); }
 
 /* Calculator */
-.calculator {
-    padding: 80px 0;
+.calculator { padding: 100px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.calc-box { 
+    max-width: 600px; margin: 0 auto; background: var(--bg-dark); 
+    padding: 40px; border-radius: 20px; border: 1px solid var(--border); 
 }
 
-.calc-box {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #f3f4f6;
-    padding: 40px;
-    border-radius: 15px;
+.calc-box label { display: block; margin-bottom: 10px; font-weight: 600; color: var(--text-muted); }
+.calc-box input, .calc-box select { 
+    width: 100%; padding: 16px; margin-bottom: 25px; 
+    background: var(--bg-card); border: 1px solid var(--border); 
+    border-radius: 8px; font-size: 16px; color: var(--text-main); 
 }
+.calc-box input:focus, .calc-box select:focus { outline: none; border-color: var(--primary); }
 
-.calc-box label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
+.result { font-size: 28px; font-weight: 700; color: var(--primary); margin-top: 30px; text-align: center; }
 
-.calc-box input, .calc-box select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.result {
-    font-size: 24px;
-    font-weight: 700;
-    color: #2563eb;
-    margin-top: 20px;
-}
-
-/* Footer */
-.footer {
-    background: #1f2937;
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    .hero__content h1 {
-        font-size: 32px;
-    }
-    
-    .nav {
-        display: none; /* Для простоты скроем меню на мобильных, потом добавим бургер */
-    }
-}
-/* Глобальная настройка плавного скролла для всего документа */
-html {
-    scroll-behavior: smooth;
-}
 /* Portfolio */
-.portfolio {
-    padding: 80px 0;
-}
+.portfolio { padding: 100px 0; }
+.portfolio__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-.portfolio__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+.portfolio-item { 
+    position: relative; border-radius: 16px; overflow: hidden; 
+    border: 1px solid var(--border); transition: 0.3s; 
 }
+.portfolio-item:hover { border-color: var(--primary); transform: translateY(-5px); }
 
-.portfolio-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-5px);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
-
-.portfolio-info {
-    padding: 20px;
-    background: white;
-}
-
-.portfolio-info h3 {
-    margin-bottom: 5px;
-    font-size: 18px;
-}
-
-.portfolio-info p {
-    color: #666;
-    font-size: 14px;
-}
+.portfolio-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+.portfolio-info { padding: 25px; background: var(--bg-card); }
+.portfolio-info h3 { margin-bottom: 8px; font-size: 18px; }
+.portfolio-info p { color: var(--text-muted); font-size: 14px; }
 
 /* Contact Form */
-.contact-form {
-    padding: 80px 0;
-    background: #2563eb;
-    color: white;
-    text-align: center;
-}
+.contact-form { padding: 100px 0; background: radial-gradient(circle at center, #1e293b 0%, var(--bg-dark) 100%); text-align: center; }
+.contact-form h2 { color: var(--text-main); margin-bottom: 50px; }
 
-.contact-form h2 {
-    color: white;
-    margin-bottom: 40px;
+.form-box { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.form-box input, .form-box textarea { 
+    padding: 18px; background: var(--bg-card); border: 1px solid var(--border); 
+    border-radius: 10px; font-family: inherit; font-size: 16px; color: var(--text-main); 
 }
+.form-box input:focus, .form-box textarea:focus { outline: none; border-color: var(--primary); }
 
-.form-box {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+/* Footer */
+.footer { background: var(--bg-card); color: var(--text-muted); padding: 50px 0; text-align: center; border-top: 1px solid var(--border); }
 
-.form-box input, .form-box textarea {
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 16px;
-}
-
-.form-box button {
-    background: #10b981;
-    color: white;
-    font-weight: 700;
-}
-
-.form-box button:hover {
-    background: #059669;
+/* Mobile */
+@media (max-width: 768px) {
+    .hero__content h1 { font-size: 36px; }
+    .nav { display: none; }
+    .features h2, .calculator h2, .portfolio h2, .contact-form h2 { font-size: 32px; }
 }
