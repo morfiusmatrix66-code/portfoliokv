@@ -39,7 +39,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('https://mastera-remonta.com/wp-content/uploads/2023/07/9d0914a21f45c3f92f323af952d6484c.jpeg');
     background-size: cover; background-position: center;
     height: 100vh; display: flex; align-items: center; text-align: center;
     margin-top: 70px;
